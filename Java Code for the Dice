@@ -1,0 +1,52 @@
+package com.example.rolldice2;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.media.Image;
+import android.os.Bundle;
+import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+
+import java.util.Random;
+import java.util.*;
+public class MainActivity extends AppCompatActivity {
+    ImageView diceImage;
+    Random random=new Random();
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        diceImage=findViewById(R.id.imageView);
+    }
+
+    public void clkdice(View view) {
+        int i=random.nextInt(6)+1;
+        Animation anim= AnimationUtils.loadAnimation(this,R.anim.rotate);
+        diceImage.startAnimation(anim);
+        switch (i){
+            case 1:
+                diceImage.setImageResource(R.drawable.dice_set_vector_icon_game_260nw_1766521181__2_);
+                break;
+            case 2:
+                diceImage.setImageResource(R.drawable.dice_set_vector_icon_game_260nw_1766521181__3_);
+                break;
+            case 3:
+                diceImage.setImageResource(R.drawable.dice_set_vector_icon_game_260nw_1766521181__4_);
+                break;
+            case 4:
+                diceImage.setImageResource(R.drawable.dice_set_vector_icon_game_260nw_1766521181__5_);
+                break;
+            case 5:
+                diceImage.setImageResource(R.drawable.dice_set_vector_icon_game_260nw_1766521181__6_);
+                break;
+            case 6:
+                diceImage.setImageResource(R.drawable.dice_set_vector_icon_game_260nw_1766521181__7_);
+                break;
+        }
+
+
+
+    }
+}
